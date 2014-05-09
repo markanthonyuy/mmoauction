@@ -168,14 +168,14 @@ console.log('Server is listening to ' + port);
 				if(bcrypt.compareSync(req.body.password, user.password)) {
 					req.session.user = user;
 					console.log(req.session);
-					res.json('success', 'Welcome user ' + user.username);
+					res.json(returnStatus('success', 'Welcome user ' + user.username));
 					
 				} else {
-					res.json('error', 'Username and Password do not match!');
+					res.json(returnStatus('error', 'Username and Password do not match!'));
 				}
 			});
 		} else {
-			res.json('error', 'Username and Password cannot be blanked!');
+			res.json(returnStatus('error', 'Username and Password cannot be blanked!'));
 		}
 	});
 	
@@ -183,9 +183,9 @@ console.log('Server is listening to ' + port);
 	app.get('/api/logout', function(req, res) {
 		if(req.session.user) {
 			delete req.session.user;
-			res.json('success', 'Successfully logged out!');
+			res.json(returnStatus('success', 'Successfully logged out!'));
 		} else {
-			res.json('error', 'Can\'t use this method');
+			res.json(returnStatus('error', 'Can\'t use this method'));
 		}	
 	});
 
