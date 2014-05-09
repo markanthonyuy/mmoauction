@@ -1,0 +1,19 @@
+{
+  "name": "mmoauction",
+  "version": "0.0.1",
+  "description": "Buying and Selling virtual goods online",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.1.0",
+    "mongoose": "~3.8.8",
+    "body-parser": "~1.0.2",
+    "bcrypt": "~0.7.8",
+    "cookie-parser": "~1.0.1",
+    "express-session": "~1.0.4"
+  }
+}
